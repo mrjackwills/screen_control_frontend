@@ -1,6 +1,6 @@
 {
   "name": "screen_control_frontend",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "scripts": {
     "serve": "cross-env NODE_OPTIONS='--no-warnings' vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -21,7 +21,7 @@
     "vuetify": "^3.6.14"
   },
   "devDependencies": {
-	"@eslint/js": "^9.8.0",
+    "@eslint/js": "^9.8.0",
     "@mdi/js": "^7.4.47",
     "@types/node": "^22.1.0",
     "@types/prismjs": "^1.26.4",
@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "^9.27.0",
     "sass": "^1.77.8",
     "typescript": "^5.5.4",
-	"typescript-eslint": "^8.0.1",
+    "typescript-eslint": "^8.0.1",
     "unplugin-auto-import": "^0.18.2",
     "unplugin-fonts": "^1.1.1",
     "unplugin-vue-components": "^0.27.3",
@@ -43,5 +43,6 @@
     "vite-plugin-pwa": "^0.20.1",
     "vite-plugin-vuetify": "^2.0.4",
     "vue-tsc": "^2.0.29"
-  }
+  },
+  "buildDate": "Wed 07 2024 August 22:09:56 BST"
 }
