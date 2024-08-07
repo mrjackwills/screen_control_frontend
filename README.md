@@ -2,7 +2,7 @@
 	<img src='./.github/logo.svg' width='125px' />
 </p>
 
-<h1 align="center">screen_control frontend</h1>
+<h1 align="center">screen control frontend</h1>
 
 <p align="center">
 	The frontend PWA for <a href='https://screen.mrjackwills.com' target='_blank' rel='noopener noreferrer'>screen_control</a>, powered by <a href='https://www.staticpi.com' target='_blank' rel='noopener noreferrer'>staticPi.com</a>
@@ -16,7 +16,7 @@
 <p align="center">
 	<ul>
 		<li><strong>A+</strong> <a href='https://www.ssllabs.com/ssltest/analyze.html?d=screen.mrjackwills.com' target='_blank' rel='noopener noreferrer'>ssllabs</a> rating</li>
-		<li><strong>A+</strong> <a href='https://securityheaders.com/?q=https%3A%2F%screen.mrjackwills.com&followRedirects=on' target='_blank' rel='noopener noreferrer'>security headers</a> rating</li>
+		<li><strong>A+</strong> <a href='https://securityheaders.com/?q=https%3A%2F%2Fscreen.mrjackwills.com&followRedirects=on' target='_blank' rel='noopener noreferrer'>security headers</a> rating</li>
 		<li><strong>A+</strong> <a href='https://observatory.mozilla.org/analyze/screen.mrjackwills.com' target='_blank' rel='noopener noreferrer'>Mozilla observatory</a> rating</li>
 	</ul>
 </p>
