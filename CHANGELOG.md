@@ -1,2 +1,2 @@
-### Featues
+### Features
 + Init commit
