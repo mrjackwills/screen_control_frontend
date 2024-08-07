@@ -1,0 +1,21 @@
+.app_back{
+	background-color: #242117;
+}
+
+.small-text{
+	font-size: 0.5rem!important;;
+}
+
+.pointer {
+	cursor: pointer!important;
+}
+
+
+/* Set text as unselectable*/
+.unselectable {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
