@@ -15,6 +15,7 @@
 										@keydown.enter='login' :error='passwordError'
 										:error-messages='passwordError ? "incorrect password" : ""'
 										:prepend-inner-icon='eyeIcon' :type='inputType' bg-color='offwhite'
+										autocomplete='password'
 										class='ma-0 pa-0'
 										label='password required'
 										clearable
@@ -53,6 +54,7 @@ import { mdiEye, mdiEyeOff } from '@mdi/js';
 import { snackReset } from '@/services/snack';
 import { useRouter } from 'vue-router';
 import type { VBtn } from 'vuetify/components/VBtn';
+import { VTextField } from 'vuetify/lib/components/index.mjs';
 
 const router = useRouter();
 const loadingStore = loadingModule();
@@ -62,7 +64,21 @@ const pageTitle = 'login';
 onMounted(() => {
 	browserModule().set_description(pageTitle);
 	browserModule().set_title(pageTitle);
+
+	// for (const i of [ 25, 50, 75, 100, 125, 150, 175, 200, 225, 250 ]) {
+	// 	window.setTimeout(auto_fill, i);
+	// }
 });
+
+// const autologin = ref(false);
+// /// If the login is autofilled, then log in automatically
+// const auto_fill = async (): Promise<void> => {
+// 	// if autologin.value
+// 	if (password.value && !autologin.value) {
+// 		autologin.value = true;
+// 		await login();
+// 	}
+// };
 
 const buttonDisabled = computed((): boolean => {
 	return loading.value || password.value.length < 1 || passwordError.value;

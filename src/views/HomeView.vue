@@ -64,7 +64,7 @@
 			<v-col cols='8' md='12' class='text-center ma-0 pa-0'>
 
 				<v-row align='center' justify='center' class='ma-0 pa-0'>
-					<v-col cols='8' md='12' class='text-center ma-0 pa-0 text-h2'>
+					<v-col cols='auto' md='12' class='text-center ma-0 pa-0 text-h2'>
 						Framebox appears offline
 					</v-col>
 				</v-row>
