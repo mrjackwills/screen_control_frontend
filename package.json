@@ -1,6 +1,6 @@
 {
   "name": "screen_control_frontend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "serve": "cross-env NODE_OPTIONS='--no-warnings' vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -44,5 +44,5 @@
     "vite-plugin-vuetify": "^2.0.4",
     "vue-tsc": "^2.1.6"
   },
-  "buildDate": "Wed 07 2024 August 22:09:56 BST"
+  "buildDate": "Sat 07 2024 September 06:45:35 BST"
 }
