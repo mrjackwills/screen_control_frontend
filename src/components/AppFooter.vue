@@ -1,10 +1,10 @@
 <template>
 	<v-footer
 		id='footer'
+		class='ma-0 pa-0 mb-3'
 		color='transparent'
 		app
 		absolute
-		class='ma-0 pa-0 mb-3'
 	>
 		<v-row justify='center' align='center' class='no-gutters ma-0 pa-0' >
 

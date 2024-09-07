@@ -10,7 +10,7 @@
 				top
 			/>
 			<RouterView />
-			<AppFooter />
+			<AppFooter  />
 			<SnackBar />
 		</v-main>
 	</v-app>
