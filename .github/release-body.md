@@ -1,11 +1,11 @@
-### 2024-09-07
+### 2024-10-20
 
 ### Chores
-+ dependencies updated, [10f368fa745ba505e9ae2dd6e73643c0e1c20358]
-+ GitHub workflow action updated, [86f390d0ec4c231464cffbdf1c53fe1583f42bd6]
-+ dependencies updated, [f1ba0f992b983603f3a05c40bbfd8aab88130e4a]
++ .devcontainer updated, [ffac7c7e85fc9c5661b7783158e0d65bf5f71028]
++ create_release.sh updated, [bd5d2719bb389298e966cf103888c2cff439245f]
++ dependencies updated, [242455d2bf9ec61678b815230b64d06d9b27c777]
 
-### Refactors
-+ dead code removed, [bace3b98bdf3c9d62f0838b218cda5fe495eaaf4]
+### Fixes
++ vite css fix, [8d496be47f0ba768a721a184aaf3d892b7e56a85]
 
 see <a href='https://github.com/mrjackwills/screen_control_frontend/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details

@@ -1,3 +1,14 @@
+# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.3'>v0.0.3</a>
+### 2024-10-20
+
+### Chores
++ .devcontainer updated, [ffac7c7e](https://github.com/mrjackwills/screen_control_frontend/commit/ffac7c7e85fc9c5661b7783158e0d65bf5f71028)
++ create_release.sh updated, [bd5d2719](https://github.com/mrjackwills/screen_control_frontend/commit/bd5d2719bb389298e966cf103888c2cff439245f)
++ dependencies updated, [242455d2](https://github.com/mrjackwills/screen_control_frontend/commit/242455d2bf9ec61678b815230b64d06d9b27c777)
+
+### Fixes
++ vite css fix, [8d496be4](https://github.com/mrjackwills/screen_control_frontend/commit/8d496be47f0ba768a721a184aaf3d892b7e56a85)
+
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.2'>v0.0.2</a>
 ### 2024-09-07
 
