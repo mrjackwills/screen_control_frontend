@@ -42,7 +42,7 @@ ask_yn() {
 }
 
 ask_continue() {
-	if ask_yn "continue"; then
+	if ! ask_yn "continue"; then
 		exit
 	fi
 }
