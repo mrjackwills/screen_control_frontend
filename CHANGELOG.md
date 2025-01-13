@@ -1,3 +1,6 @@
+### Chores
++ dependencies updated, [ad583835e0ebe5f39a5c78b25bf5f0405d45d33e]
+
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.4'>v0.0.4</a>
 ### 2024-11-29
 
