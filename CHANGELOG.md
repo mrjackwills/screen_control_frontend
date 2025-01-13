@@ -1,5 +1,8 @@
+# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.5'>v0.0.5</a>
+### 2025-01-13
+
 ### Chores
-+ dependencies updated, [ad583835e0ebe5f39a5c78b25bf5f0405d45d33e]
++ dependencies updated, [ad583835](https://github.com/mrjackwills/screen_control_frontend/commit/ad583835e0ebe5f39a5c78b25bf5f0405d45d33e)
 
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.4'>v0.0.4</a>
 ### 2024-11-29
