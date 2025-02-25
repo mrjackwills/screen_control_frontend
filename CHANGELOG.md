@@ -1,3 +1,9 @@
+### Chores
++ create_release.sh updated, [7ed5b9eb3749f974b370ad2d494c919badb11551]
+
+### Features
++  user eslint v9, [f0cd652bf3d22daebafd537206dae86902adde51]
+
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.5'>v0.0.5</a>
 ### 2025-01-13
 
