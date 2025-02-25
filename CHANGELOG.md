@@ -1,8 +1,11 @@
+# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.0'>v0.1.0</a>
+### 2025-02-25
+
 ### Chores
-+ create_release.sh updated, [7ed5b9eb3749f974b370ad2d494c919badb11551]
++ create_release.sh updated, [7ed5b9eb](https://github.com/mrjackwills/screen_control_frontend/commit/7ed5b9eb3749f974b370ad2d494c919badb11551)
 
 ### Features
-+ use eslint v9, [f0cd652bf3d22daebafd537206dae86902adde51]
++ use eslint v9, [f0cd652b](https://github.com/mrjackwills/screen_control_frontend/commit/f0cd652bf3d22daebafd537206dae86902adde51)
 
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.0.5'>v0.0.5</a>
 ### 2025-01-13
