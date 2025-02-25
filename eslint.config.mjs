@@ -45,7 +45,7 @@ export default defineConfigWithVueTs(
 				after: true
 			}],
 			'max-len': ['error', { code: 200 }],
-'no-console': 'error',
+			'no-console': 'error',
 			semi: ['error', 'always'],
 			'space-before-blocks': ['error', {
 				functions: 'always',
