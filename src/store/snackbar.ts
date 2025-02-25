@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
+import { ModuleName } from '@/types/const_module';
 
 export const snackbarStore = defineStore(ModuleName.SNACKBAR, {
 
@@ -9,7 +9,7 @@ export const snackbarStore = defineStore(ModuleName.SNACKBAR, {
 		message: '',
 		timeout: 0,
 		visible: false,
-		error: false,
+		error: false
 	}),
 
 	actions: {
@@ -35,7 +35,7 @@ export const snackbarStore = defineStore(ModuleName.SNACKBAR, {
 		
 		set_visible (b: boolean): void {
 			this.visible = b;
-		},
+		}
 
 	}
 });

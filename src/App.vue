@@ -48,7 +48,7 @@ const description = computed((): string => {
 	return browserStore.description;
 });
 
-onMounted(() : void => {
+onMounted((): void => {
 	// Prevent Chrome 67 and earlier from automatically showing the prompt
 	window.addEventListener('beforeinstallprompt', (e) => {
 		e.preventDefault();
@@ -78,14 +78,17 @@ useHead({
 			}
 		}
 	],
-	link: () => [ { rel: 'canonical', href: `${env.domain}${route?.path}` } ],
+	link: () => [ {
+		rel: 'canonical',
+		href: `${env.domain}${route?.path}` 
+	} ]
 });
 
 const appUpdate = (): void => {
 	snackSuccess({
 		message: 'downloading updates',
 		loading: true,
-		timeout: 4500,
+		timeout: 4500
 	});
 	window.setTimeout(() => updateServiceWorker(), 5000);
 	

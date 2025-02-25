@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
+import { ModuleName } from '@/types/const_module';
 import type { ScreenStatus, Status } from '@/types';
 
 export const statusModule = defineStore(ModuleName.STATUS, {
@@ -11,7 +11,7 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 		ip_address: '',
 		version: '',
 		screen_status: undefined as undefined | ScreenStatus,
-		init: false,
+		init: false
 	}),
 
 	getters: {

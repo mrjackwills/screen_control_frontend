@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { FrontendRoutes } from '@/types/enum_routes';
+import { FrontendRoutes } from '@/types/const_routes';
 import HomeView from '@/views/HomeView.vue';
 import LoginView from '@/views/LoginView.vue';
 
@@ -20,13 +20,17 @@ const router = createRouter({
 			path: FrontendRoutes.LOGIN,
 			name: 'login',
 			component: LoginView,
-			beforeEnter: (to, from, next): void => {
+			beforeEnter: (_to, _from, next): void => {
 				if (userModule().authenticated)	next(FrontendRoutes.BASE);
 				else next();
 			}
 		},
-		{ path: FrontendRoutes.CATCHALL, name: 'not-found', redirect: { name: 'home' } },
-	],
+		{
+			path: FrontendRoutes.CATCHALL,
+			name: 'not-found',
+			redirect: { name: 'home' } 
+		}
+	]
 });
 
 export default router;

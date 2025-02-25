@@ -1,14 +1,12 @@
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
+import { ModuleName } from '@/types/const_module';
 import { userModule } from './user';
 import { ws } from '@/services/WS';
 import { wsOutGoing } from '@/types';
 
 export const websocketModule = defineStore(ModuleName.WEBSOCKET, {
 
-	state: () => ({
-		connected: false
-	}),
+	state: () => ({ connected: false }),
 
 	actions: {
 
@@ -27,12 +25,15 @@ export const websocketModule = defineStore(ModuleName.WEBSOCKET, {
 		},
 
 		send (data: wsOutGoing): void {
-			ws.connection?.send(JSON.stringify({ data, unique: true }));
+			ws.connection?.send(JSON.stringify({
+				data,
+				unique: true 
+			}));
 		},
 
 		set_connected (b: boolean): void {
 			this.connected = b;
-		},
+		}
 
 	}
 });

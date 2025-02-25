@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 import { axiosRequests } from '@/services/axios';
-import { FrontendRoutes } from '@/types/enum_routes';
+import { FrontendRoutes } from '@/types/const_routes';
 import { mdiEye, mdiEyeOff } from '@mdi/js';
 import { snackReset } from '@/services/snack';
 import { useRouter } from 'vue-router';
