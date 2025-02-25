@@ -121,7 +121,6 @@ const login = async (): Promise<void> => {
 	const response = await axiosRequests.wsAuth_post(password.value);
 	loading.value = false;
 	if (response) {
-		// eslint-disable-next-line require-atomic-updates
 		password.value = '';
 		snackReset();
 		router.push(FrontendRoutes.BASE);
