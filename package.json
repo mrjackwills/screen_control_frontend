@@ -1,6 +1,6 @@
 {
   "name": "screen_control_frontend",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "scripts": {
     "serve": "cross-env NODE_OPTIONS='--no-warnings' vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -21,7 +21,7 @@
     "vuetify": "^3.7.13"
   },
   "devDependencies": {
-	"@stylistic/eslint-plugin-ts": "^4.0.1",
+    "@stylistic/eslint-plugin-ts": "^4.0.1",
     "@mdi/js": "^7.4.47",
     "@types/node": "^22.13.5",
     "@types/prismjs": "^1.26.5",
@@ -43,5 +43,5 @@
     "vite": "^6.2.0",
     "vue-tsc": "^2.2.4"
   },
-  "buildDate": "Mon 13 2025 January 15:29:42 GMT"
+  "buildDate": "Tue 25 2025 February 21:53:39 GMT"
 }
