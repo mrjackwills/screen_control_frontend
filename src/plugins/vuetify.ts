@@ -7,9 +7,7 @@ export default createVuetify({
 	icons: {
 		defaultSet: 'mdi',
 		aliases,
-		sets: {
-			mdi,
-		},
+		sets: { mdi }
 	},
 	
 	theme: {
@@ -20,9 +18,9 @@ export default createVuetify({
 					primary: '#A02C5F',
 					error: '#DA0360',
 					offwhite: '#FFEECB',
-					secondary: '#FF7245',
-				},
-			},
-		},
-	},
+					secondary: '#FF7245'
+				}
+			}
+		}
+	}
 });

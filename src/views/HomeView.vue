@@ -90,9 +90,9 @@ import { snackError } from '@/services/snack';
 import { ws } from '@/services/WS';
 import type { WsIncoming } from '@/types';
 
-let router = useRouter();
+const router = useRouter();
 
-const [ loadingStore, statusStore, websocketStore, ] = [ loadingModule(), statusModule(), websocketModule() ];
+const [ loadingStore, statusStore, websocketStore ] = [ loadingModule(), statusModule(), websocketModule() ];
 const pageTitle = '';
 
 onMounted(() => {
@@ -184,17 +184,16 @@ const wsDataHandler = async (message: WsIncoming): Promise<void> => {
 	loading.value = false;
 	statusStore.set_init_true();
 	switch (message.data?.name) {
-	case 'status': {
-		console.log;
-		if (message.data.data) statusStore.set_from_status(message.data.data);
-		init_time_interval();
-		break;
-	}
+		case 'status': {
+			if (message.data.data) statusStore.set_from_status(message.data.data);
+			init_time_interval();
+			break;
+		}
 
-	case 'error': {
-		await snackError({ message: message.data.data });
-		break;
-	}
+		case 'error': {
+			await snackError({ message: message.data.data });
+			break;
+		}
 	}
 
 };
