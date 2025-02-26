@@ -1,4 +1,4 @@
-### CHores
+### Chores
 + dependencies updated, [3bd2476915533ed1798581cbb9ff1e738cd30b3a]
 
 ### Features
