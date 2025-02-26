@@ -1,3 +1,12 @@
+# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.1'>v0.1.1</a>
+### 2025-02-26
+
+### Chores
++ dependencies updated, [3bd24769](https://github.com/mrjackwills/screen_control_frontend/commit/3bd2476915533ed1798581cbb9ff1e738cd30b3a)
+
+### Features
++ time_on & time_off, [3a73f3a6](https://github.com/mrjackwills/screen_control_frontend/commit/3a73f3a62938f1e857d89dfbcb7c93cf065754fd)
+
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.0'>v0.1.0</a>
 ### 2025-02-25
 

@@ -9,6 +9,8 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 		uptime_ws: 0,
 		uptime: 0,
 		ip_address: '',
+		time_on: [0, 0],
+		time_off: [0, 0],
 		version: '',
 		screen_status: undefined as undefined | ScreenStatus,
 		init: false
@@ -41,6 +43,12 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 		set_ip_address (x: string) {
 			this.ip_address = x;
 		},
+		set_time_on (x: [number, number]) {
+			this.time_on = x;
+		},
+		set_time_off (x: [number, number]) {
+			this.time_off = x;
+		},
 
 		/// Set all values
 		set_from_status (x: Status) {
@@ -50,6 +58,8 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 			this.set_uptime_ws(x.uptime_ws);
 			this.set_version(x.version);
 			this.set_ip_address(x.ip_address);
+			this.set_time_on(x.time_on);
+			this.set_time_off(x.time_off);
 		},
 
 		set_init_true () {

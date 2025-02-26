@@ -1,6 +1,6 @@
 {
   "name": "screen_control_frontend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "cross-env NODE_OPTIONS='--no-warnings' vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -12,16 +12,16 @@
     "@mdi/font": "7.4.47",
     "@vueuse/core": "^12.7.0",
     "@vueuse/head": "^2.0.0",
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "pinia": "^3.0.1",
     "qrcode.vue": "^3.6.0",
     "secure-json-parse": "^3.0.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "vuetify": "^3.7.13"
+    "vuetify": "^3.7.14"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin-ts": "^4.0.1",
+    "@stylistic/eslint-plugin-ts": "^4.1.0",
     "@mdi/js": "^7.4.47",
     "@types/node": "^22.13.5",
     "@types/prismjs": "^1.26.5",
@@ -43,5 +43,5 @@
     "vite": "^6.2.0",
     "vue-tsc": "^2.2.4"
   },
-  "buildDate": "Tue 25 2025 February 21:53:39 GMT"
+  "buildDate": "Wed 26 2025 February 09:46:33 GMT"
 }

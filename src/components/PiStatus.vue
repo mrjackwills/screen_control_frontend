@@ -27,6 +27,14 @@
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-right text-right unselectable'>
 					<span >uptime: </span><span class='font-weight-bold'>{{ uptime }}</span>
 				</v-col>
+
+				<v-col cols='auto' class='ma-0 pa-0 text-md-left text-left unselectable'>
+					<span >time on: </span><span class='font-weight-bold'>{{ time_on }}</span>
+				</v-col>
+
+				<v-col cols='auto' class='ma-0 pa-0 text-md-right text-left unselectable'>
+					<span >time off: </span><span class='font-weight-bold'>{{ time_off }}</span>
+				</v-col>
 			</v-row>
 		</v-col>
 	</v-row>
@@ -35,6 +43,7 @@
 <script setup lang='ts'>
 import { env } from '@/vanillaTS/env';
 import { secondsToText } from '@/vanillaTS/secondsToText';
+import { zeroPad } from '@/vanillaTS/zeropad';
 
 const statusStore = statusModule();
 
@@ -54,6 +63,17 @@ const uptime = computed(() => {
 	return secondsToText(statusStore.uptime);
 });
 
+const time_on = computed(() => {
+	const hour = zeroPad(statusStore.time_on[0]);
+	const minute = zeroPad(statusStore.time_on[1]);
+	return `${hour}:${minute}`;
+});
+
+const time_off = computed(() => {
+	const hour = zeroPad(statusStore.time_off[0]);
+	const minute = zeroPad(statusStore.time_off[1]);
+	return `${hour}:${minute}`;
+});
 const backend_version = computed(() => {
 	return statusStore.version;
 });

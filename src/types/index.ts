@@ -37,7 +37,7 @@ type OutgoingMessageName = 'status' | 'screen_on' | 'screen_off';
 type IncomingMessageName = 'status' | 'error';
 
 export type Status = Record<'screen_status' | 'version' | 'ip_address', string>
-	& Record<'uptime' | 'uptime_app' | 'uptime_ws', number>;
+	& Record<'uptime' | 'uptime_app' | 'uptime_ws', number> & Record<'time_on' | 'time_off', [number, number]>;
 
 export type ComputedCity = Record<'value' | 'title', string>;
 

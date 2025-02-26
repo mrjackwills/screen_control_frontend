@@ -1,4 +1,4 @@
-export const FrontendRoutes =  {
+export const FrontendRoutes = {
 	BASE: '/' as const,
 	LOGIN: '/login' as const,
 	CATCHALL: '/:pathMatch(.*)*' as const
