@@ -99,6 +99,7 @@ onMounted(() => {
 	browserModule().set_description(``);
 	browserModule().set_title(pageTitle);
 	init_time_interval();
+	init_status_interval();
 	loading.value = true;
 
 	/// Ten second timeout to get first message
@@ -108,7 +109,8 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-	clearTimeout(time_timeout.value);
+	clearTimeout(time_interval.value);
+	clearInterval(status_interval.value);
 });
 
 const loading = computed({
@@ -131,15 +133,24 @@ const init = computed(() => {
 });
 
 /// Time methods
-const time_timeout = ref(0);
+const time_interval = ref(0);
+
+/// 
+const status_interval = ref(0);
 
 /// Update the current_time value every second
 const init_time_interval = (): void => {
-	clearInterval(time_timeout.value);
-	time_timeout.value = window.setInterval(() => {
+	clearInterval(time_interval.value);
+	time_interval.value = window.setInterval(() => {
 		statusStore.increase_uptimes();
 	}, 1000);
+};
 
+const init_status_interval = (): void => {
+	clearInterval(status_interval.value);
+	status_interval.value = window.setInterval(() => {
+		send_status();
+	}, 10_000);
 };
 
 /// Web socket methods
@@ -187,9 +198,9 @@ const wsDataHandler = async (message: WsIncoming): Promise<void> => {
 		case 'status': {
 			if (message.data.data) statusStore.set_from_status(message.data.data);
 			init_time_interval();
+			init_status_interval();
 			break;
 		}
-
 		case 'error': {
 			await snackError({ message: message.data.data });
 			break;
@@ -205,9 +216,7 @@ const reload = (): void => {
 
 /// Text on the main button
 const button_text = computed(() => {
-
 	if (have_screen_status.value) {
-
 		if (statusStore.screen_status === 'On') {
 			return 'turn screen OFF';
 		} else {
@@ -237,7 +246,6 @@ const turn_screen_on = (): void => {
 const toggle_screen = async (): Promise<void>=> {
 	if (statusStore.screen_status === 'On') {
 		turn_screen_off();
-
 	} else if (statusStore.screen_status === 'Off') {
 		turn_screen_on();
 	}
