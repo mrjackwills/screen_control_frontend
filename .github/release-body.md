@@ -1,9 +1,9 @@
-### 2025-02-25
+### 2025-02-26
 
 ### Chores
-+ create_release.sh updated, [7ed5b9eb3749f974b370ad2d494c919badb11551]
++ dependencies updated, [3bd2476915533ed1798581cbb9ff1e738cd30b3a]
 
 ### Features
-+ use eslint v9, [f0cd652bf3d22daebafd537206dae86902adde51]
++ time_on & time_off, [3a73f3a62938f1e857d89dfbcb7c93cf065754fd]
 
 see <a href='https://github.com/mrjackwills/screen_control_frontend/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details
