@@ -22,6 +22,5 @@ export const userModule = defineStore(ModuleName.USER, {
 		set_authenticated (value: boolean) {
 			this.authenticated = value;
 		}
-		
 	}
 });

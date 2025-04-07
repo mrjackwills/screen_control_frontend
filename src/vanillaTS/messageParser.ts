@@ -11,7 +11,7 @@ export const parseMessage = (message: unknown): WsIncoming | undefined=> {
 		});
 		if (!tmpData.data && !tmpData?.error) throw Error('Invalid data');
 		return tmpData;
-	} catch (_e) {
+	} catch {
 		return undefined;
 	}
 };

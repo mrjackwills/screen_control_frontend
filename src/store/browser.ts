@@ -31,6 +31,5 @@ export const browserModule = defineStore(ModuleName.BROWSER, {
 		set_title (x: string): void {
 			this.title = x;
 		}
-		
 	}
 });

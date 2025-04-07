@@ -34,6 +34,5 @@ export const websocketModule = defineStore(ModuleName.WEBSOCKET, {
 		set_connected (b: boolean): void {
 			this.connected = b;
 		}
-
 	}
 });

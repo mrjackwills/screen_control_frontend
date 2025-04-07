@@ -65,7 +65,6 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 			this.set_time_on(x.time_on);
 			this.set_time(x.timezone);
 			this.set_time_off(x.time_off);
-			
 		},
 
 		set_init_true () {

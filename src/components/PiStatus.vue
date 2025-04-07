@@ -5,7 +5,7 @@
 			<v-row justify='space-between' class='ma-0 pa-0'>
 
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-left text-left unselectable '>
-					<span >backend version: </span><span class='font-weight-bold'>{{ backend_version }}</span>
+					<span>backend version: </span><span class='font-weight-bold'>{{ backend_version }}</span>
 				</v-col>
 
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-center text-right'>
@@ -13,31 +13,31 @@
 				</v-col>
 
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-right text-left unselectable'>
-					<span >frontend version: </span><span class='font-weight-bold'>{{ env.app_version }}</span>
+					<span>frontend version: </span><span class='font-weight-bold'>{{ env.app_version }}</span>
 				</v-col>
 
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-left text-right unselectable'>
-					<span >uptime app: </span><span class='font-weight-bold'>{{ uptime_app }}</span>
+					<span>uptime app: </span><span class='font-weight-bold'>{{ uptime_app }}</span>
 				</v-col>
 
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-center text-left unselectable'>
-					<span >uptime ws: </span><span class='font-weight-bold'>{{ uptime_ws }}</span>
+					<span>uptime ws: </span><span class='font-weight-bold'>{{ uptime_ws }}</span>
 				</v-col>
 
 				<v-col cols='6' md='4' class='ma-0 pa-0 text-md-right text-right unselectable'>
-					<span >uptime: </span><span class='font-weight-bold'>{{ uptime }}</span>
+					<span>uptime: </span><span class='font-weight-bold'>{{ uptime }}</span>
 				</v-col>
 
 				<v-col cols='auto' class='ma-0 pa-0 text-md-left text-left unselectable'>
-					<span >time on: </span><span class='font-weight-bold'>{{ time_on }}</span>
+					<span>time on: </span><span class='font-weight-bold'>{{ time_on }}</span>
 				</v-col>
 
 				<v-col cols='auto' class='ma-0 pa-0 text-md-left text-left unselectable'>
-					<span >current time: </span><span class='font-weight-bold'>{{ current_time }}</span>
+					<span>current time: </span><span class='font-weight-bold'>{{ current_time }}</span>
 				</v-col>
 
 				<v-col cols='auto' class='ma-0 pa-0 text-md-right text-left unselectable'>
-					<span >time off: </span><span class='font-weight-bold'>{{ time_off }}</span>
+					<span>time off: </span><span class='font-weight-bold'>{{ time_off }}</span>
 				</v-col>
 			</v-row>
 		</v-col>
@@ -63,14 +63,14 @@ onMounted(() => {
 	set_current_time();
 });
 
-
+/// Uptime is incrased every second in the HomeView.vue, by watching we can update the current_time on the same schedule
 watch(uptime, () => {
 	set_current_time();
 });
 
 const set_current_time = (): void => {
 	const tzOptions: Intl.DateTimeFormatOptions = {
-		timeZone: timezone.value,
+		timeZone: statusStore.timezone,
 		hour: 'numeric',
 		minute: 'numeric',
 		second: 'numeric',
@@ -86,17 +86,7 @@ const set_current_time = (): void => {
 	current_time.value = `${zeroPad(time.hours)}:${zeroPad(time.minutes)}:${zeroPad(time.seconds)}`;
 };
 
-const timezone = computed(() => statusStore.timezone);
-const time_on = computed(() => {
-	const hour = zeroPad(statusStore.time_on[0]);
-	const minute = zeroPad(statusStore.time_on[1]);
-	return `${hour}:${minute}`;
-});
-
-const time_off = computed(() => {
-	const hour = zeroPad(statusStore.time_off[0]);
-	const minute = zeroPad(statusStore.time_off[1]);
-	return `${hour}:${minute}`;
-});
+const time_on = computed(() => `${statusStore.time_on[0]}:${statusStore.time_on[1]}`);
+const time_off = computed(() => `${statusStore.time_off[0]}:${statusStore.time_off[1]}`);
 
 </script>

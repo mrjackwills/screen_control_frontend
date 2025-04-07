@@ -36,6 +36,5 @@ export const snackbarStore = defineStore(ModuleName.SNACKBAR, {
 		set_visible (b: boolean): void {
 			this.visible = b;
 		}
-
 	}
 });

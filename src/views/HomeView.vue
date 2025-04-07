@@ -2,12 +2,12 @@
 	<v-container class='fill-height ma-0 pa-0' fluid>
 
 		<v-row align='center' justify='center' class='ma-0 pa-0 fill-height' v-if='init'>
-			<v-col cols='11'  class='text-center ma-0 pa-0'>
+			<v-col cols='11' class='text-center ma-0 pa-0'>
 
 				<v-row align='center' justify='center' class='ma-0 pa-0'>
 					<v-col cols='12' md='6' class='text-center ma-0 pa-0'>
 
-						<PiStatus  />
+						<PiStatus />
 					</v-col>
 				</v-row>
 
@@ -17,40 +17,31 @@
 					</v-col>
 
 				</v-row>
-		
+
 				<v-row justify='center' class='ma-0 pa-0 mt-8'>
 
 					<template v-if='have_screen_status && init'>
-						<v-col cols='auto' class='ma-0 pa-0' >
-							<v-btn
-								color='primary'
-								rounded='lg'
-								@click='toggle_screen'>
+						<v-col cols='auto' class='ma-0 pa-0'>
+							<v-btn color='primary' rounded='lg' @click='toggle_screen'>
 								{{ button_text }}
 							</v-btn>
 						</v-col>
 
 					</template>
 					<template v-if='!have_screen_status && init'>
-						
+
 						<v-col cols='auto' class='ma-0 pa-0 mr-3'>
-							<v-btn
-								color='primary'
-								rounded='lg'
-								@click='turn_screen_on'>
+							<v-btn color='primary' rounded='lg' @click='turn_screen_on'>
 								try on
 							</v-btn>
 						</v-col>
-					
+
 						<v-col cols='auto' class='ma-0 pa-0'>
-							<v-btn
-								color='primary'
-								rounded='lg'
-								@click='turn_screen_off'>
+							<v-btn color='primary' rounded='lg' @click='turn_screen_off'>
 								try off
 							</v-btn>
 						</v-col>
-				
+
 					</template>
 
 					<template v-if='!init'>
@@ -69,17 +60,14 @@
 					</v-col>
 				</v-row>
 				<v-row align='center' justify='center' class='ma-0 pa-0 mt-3'>
-					<v-col cols='auto' class='ma-0 pa-0 ml-3' v-if='!have_screen_status' >
-						<v-btn
-							color='primary'
-							rounded='lg'
-							@click='reload'>
+					<v-col cols='auto' class='ma-0 pa-0 ml-3' v-if='!have_screen_status'>
+						<v-btn color='primary' rounded='lg' @click='reload'>
 							reload
 						</v-btn>
 					</v-col>
 				</v-row>
 			</v-col>
-				
+
 		</v-row>
 	</v-container>
 </template>
@@ -92,7 +80,7 @@ import type { WsIncoming } from '@/types';
 
 const router = useRouter();
 
-const [ loadingStore, statusStore, websocketStore ] = [ loadingModule(), statusModule(), websocketModule() ];
+const [loadingStore, statusStore, websocketStore] = [loadingModule(), statusModule(), websocketModule()];
 const pageTitle = '';
 
 onMounted(() => {
@@ -123,19 +111,14 @@ const loading = computed({
 });
 
 /// Web socket methods
-const screen_status = computed(() => {
-	return statusStore.screen_status ?? 'unknown';
-});
+const screen_status = computed(() => statusStore.screen_status ?? 'unknown');
 
 /// Web socket methods
-const init = computed(() => {
-	return statusStore.init;
-});
+const init = computed(() => statusStore.init);
 
 /// Time methods
 const time_interval = ref(0);
 
-/// 
 const status_interval = ref(0);
 
 /// Update the current_time value every second
@@ -154,9 +137,7 @@ const init_status_interval = (): void => {
 };
 
 /// Web socket methods
-const ws_connected = computed(() => {
-	return websocketStore.connected;
-});
+const ws_connected = computed(() => websocketStore.connected);
 
 /// Request the status of the server
 const send_status = (): void => {
@@ -228,9 +209,7 @@ const button_text = computed(() => {
 });
 
 /// Screen status is known?
-const have_screen_status = computed(() => {
-	return statusStore.have_screen_status;
-});
+const have_screen_status = computed(() => statusStore.have_screen_status);
 
 // Send a screen off command
 const turn_screen_off = (): void => {
@@ -243,7 +222,7 @@ const turn_screen_on = (): void => {
 };
 
 /// Toggle the screen depending on current screen state
-const toggle_screen = async (): Promise<void>=> {
+const toggle_screen = async (): Promise<void> => {
 	if (statusStore.screen_status === 'On') {
 		turn_screen_off();
 	} else if (statusStore.screen_status === 'Off') {

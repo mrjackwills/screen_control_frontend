@@ -1,3 +1,5 @@
+import { ConstT } from '@/types';
+
 export const ModuleName = {
 	BROWSER: 'browser' as const,
 	LOADING: 'loading' as const,
@@ -7,5 +9,4 @@ export const ModuleName = {
 	USER: 'user' as const,
 	WEBSOCKET: 'websocket' as const
 };
-
-export type ModuleName = (typeof ModuleName)[keyof typeof ModuleName]; 
+export type ModuleName = ConstT<typeof ModuleName>;

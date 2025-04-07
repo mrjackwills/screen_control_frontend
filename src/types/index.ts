@@ -2,6 +2,8 @@ export type u<T> = T | undefined;
 export type nu = u<number>;
 export type su = u<string>;
 
+export type ConstT<T> = T[keyof T];
+
 export type Snack = {
 	message?: string;
 	icon?: string;
