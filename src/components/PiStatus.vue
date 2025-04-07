@@ -32,6 +32,10 @@
 					<span >time on: </span><span class='font-weight-bold'>{{ time_on }}</span>
 				</v-col>
 
+				<v-col cols='auto' class='ma-0 pa-0 text-md-left text-left unselectable'>
+					<span >current time: </span><span class='font-weight-bold'>{{ current_time }}</span>
+				</v-col>
+
 				<v-col cols='auto' class='ma-0 pa-0 text-md-right text-left unselectable'>
 					<span >time off: </span><span class='font-weight-bold'>{{ time_off }}</span>
 				</v-col>
@@ -47,22 +51,42 @@ import { zeroPad } from '@/vanillaTS/zeropad';
 
 const statusStore = statusModule();
 
-const ip_address = computed(() => {
-	return statusStore.ip_address;
+const backend_version = computed(() => statusStore.version);
+const ip_address = computed(() => statusStore.ip_address);
+const uptime = computed(() => secondsToText(statusStore.uptime));
+const uptime_app = computed(() => secondsToText(statusStore.uptime_app));
+const uptime_ws = computed(() => secondsToText(statusStore.uptime_ws));
+
+const current_time = ref('');
+
+onMounted(() => {
+	set_current_time();
 });
 
-const uptime_app = computed(() => {
-	return secondsToText(statusStore.uptime_app);
+
+watch(uptime, () => {
+	set_current_time();
 });
 
-const uptime_ws = computed(() => {
-	return secondsToText(statusStore.uptime_ws);
-});
+const set_current_time = (): void => {
+	const tzOptions: Intl.DateTimeFormatOptions = {
+		timeZone: timezone.value,
+		hour: 'numeric',
+		minute: 'numeric',
+		second: 'numeric',
+		hour12: false
+	};
+	const tempDate = new Intl.DateTimeFormat([], tzOptions);
+	const formattedDate = tempDate.format(new Date());
+	const time = {
+		hours: Number(formattedDate.toString().substring(0, 2)),
+		minutes: Number(formattedDate.toString().substring(3, 5)),
+		seconds: Number(formattedDate.toString().substring(6, 8))
+	};
+	current_time.value = `${zeroPad(time.hours)}:${zeroPad(time.minutes)}:${zeroPad(time.seconds)}`;
+};
 
-const uptime = computed(() => {
-	return secondsToText(statusStore.uptime);
-});
-
+const timezone = computed(() => statusStore.timezone);
 const time_on = computed(() => {
 	const hour = zeroPad(statusStore.time_on[0]);
 	const minute = zeroPad(statusStore.time_on[1]);
@@ -73,9 +97,6 @@ const time_off = computed(() => {
 	const hour = zeroPad(statusStore.time_off[0]);
 	const minute = zeroPad(statusStore.time_off[1]);
 	return `${hour}:${minute}`;
-});
-const backend_version = computed(() => {
-	return statusStore.version;
 });
 
 </script>
