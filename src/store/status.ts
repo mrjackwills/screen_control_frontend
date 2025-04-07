@@ -8,6 +8,7 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 		uptime_app: 0,
 		uptime_ws: 0,
 		uptime: 0,
+		timezone: '',
 		ip_address: '',
 		time_on: [0, 0],
 		time_off: [0, 0],
@@ -49,6 +50,9 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 		set_time_off (x: [number, number]) {
 			this.time_off = x;
 		},
+		set_time (s: string): void {
+			this.timezone = s;
+		},
 
 		/// Set all values
 		set_from_status (x: Status) {
@@ -59,6 +63,7 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 			this.set_version(x.version);
 			this.set_ip_address(x.ip_address);
 			this.set_time_on(x.time_on);
+			this.set_time(x.timezone);
 			this.set_time_off(x.time_off);
 		},
 

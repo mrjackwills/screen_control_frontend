@@ -1,16 +1,9 @@
 <template>
 	<v-app class='ma-0 pa-0 app_back'>
 		<v-main class='ma-0 pa-0'>
-			<v-progress-linear
-				:active='true'
-				:indeterminate='loading'
-				bg-opacity='0'
-				color='error'
-				class='mb-n1'
-				top
-			/>
+			<v-progress-linear :active='true' :indeterminate='loading' bg-opacity='0' color='error' class='mb-n1' top />
 			<RouterView />
-			<AppFooter  />
+			<AppFooter />
 			<SnackBar />
 		</v-main>
 	</v-app>
@@ -36,17 +29,9 @@ if ('serviceWorker' in navigator) {
 	});
 }
 
-const loading = computed((): boolean => {
-	return loadingModule().loading;
-});
-
-const title = computed((): string => {
-	return browserStore.title;
-});
-
-const description = computed((): string => {
-	return browserStore.description;
-});
+const loading = computed(() => loadingModule().loading);
+const title = computed(() => browserStore.title);
+const description = computed(() => browserStore.description);
 
 onMounted((): void => {
 	// Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -78,10 +63,10 @@ useHead({
 			}
 		}
 	],
-	link: () => [ {
+	link: () => [{
 		rel: 'canonical',
-		href: `${env.domain}${route?.path}` 
-	} ]
+		href: `${env.domain}${route?.path}`
+	}]
 });
 
 const appUpdate = (): void => {
@@ -91,7 +76,6 @@ const appUpdate = (): void => {
 		timeout: 4500
 	});
 	window.setTimeout(() => updateServiceWorker(), 5000);
-	
 };
 
 </script>

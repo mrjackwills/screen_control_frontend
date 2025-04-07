@@ -1,20 +1,11 @@
 <template>
-	<v-snackbar
-		v-model='visible'
-		timeout='-1'
-		color='black'
-	>
+	<v-snackbar v-model='visible' timeout='-1' color='black'>
 		<v-row justify='center' align='center' no-gutters class='ma-0 pa-0 unselectable'>
 			<v-col v-if='icon && !loading' cols='auto' class=''>
 				<v-icon color='error' :icon='icon' />
 			</v-col>
 			<v-col v-if='loading' cols='auto' class=''>
-				<v-progress-circular
-					indeterminate
-					:size='18'
-					:width='3'
-					color='danger'
-				/>
+				<v-progress-circular indeterminate :size='18' :width='3' color='danger' />
 			</v-col>
 			<v-col cols='auto' class='mx-3 ma-0 pa-0 danger--text'>
 				{{ message }}
@@ -24,13 +15,11 @@
 
 </template>
 
-<script setup lang ='ts'>
+<script setup lang='ts'>
 
 const snackbar = snackbarStore();
 
-const icon = computed((): string => {
-	return snackbar.icon;
-});
+const icon = computed(() => snackbar.icon);
 const loading = computed({
 	get (): boolean {
 		return snackbar.loading;

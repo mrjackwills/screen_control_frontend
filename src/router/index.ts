@@ -21,14 +21,14 @@ const router = createRouter({
 			name: 'login',
 			component: LoginView,
 			beforeEnter: (_to, _from, next): void => {
-				if (userModule().authenticated)	next(FrontendRoutes.BASE);
+				if (userModule().authenticated) next(FrontendRoutes.BASE);
 				else next();
 			}
 		},
 		{
 			path: FrontendRoutes.CATCHALL,
 			name: 'not-found',
-			redirect: { name: 'home' } 
+			redirect: { name: 'home' }
 		}
 	]
 });
