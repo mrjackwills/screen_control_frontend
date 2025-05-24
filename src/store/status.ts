@@ -54,7 +54,7 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 			this.timezone = s;
 		},
 
-		/// Set all values
+		// Set all values
 		set_from_status (x: Status) {
 			this.set_uptime(x.uptime);
 			this.set_screen_status(x.screen_status);
@@ -71,7 +71,7 @@ export const statusModule = defineStore(ModuleName.STATUS, {
 			this.init = true;
 		},
 
-		/// Increase the uptimes by one second
+		// Increase the uptimes by one second
 		increase_uptimes () {
 			this.uptime++;
 			this.uptime_app++;

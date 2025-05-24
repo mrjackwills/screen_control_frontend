@@ -63,10 +63,12 @@ useHead({
 			}
 		}
 	],
-	link: () => [{
-		rel: 'canonical',
-		href: `${env.domain}${route?.path}`
-	}]
+	link: () => [
+		{
+			rel: 'canonical',
+			href: `${env.domain}${route?.path}`
+		}
+	]
 });
 
 const appUpdate = (): void => {

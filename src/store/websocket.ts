@@ -27,7 +27,7 @@ export const websocketModule = defineStore(ModuleName.WEBSOCKET, {
 		send (data: wsOutGoing): void {
 			ws.connection?.send(JSON.stringify({
 				data,
-				unique: true 
+				unique: true
 			}));
 		},
 
