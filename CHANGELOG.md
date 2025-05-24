@@ -1,6 +1,9 @@
+# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.3'>v0.1.3</a>
+### 2025-05-24
+
 ### Chores
-+ linting, [f7cce4ede2491939931b954cf666223de501bf3d]
-+ dependencies updated, [7e8981df2535ac1a27051827feda9d183e470252]
++ linting, [f7cce4ed](https://github.com/mrjackwills/screen_control_frontend/commit/f7cce4ede2491939931b954cf666223de501bf3d)
++ dependencies updated, [7e8981df](https://github.com/mrjackwills/screen_control_frontend/commit/7e8981df2535ac1a27051827feda9d183e470252)
 
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.2'>v0.1.2</a>
 ### 2025-04-07
