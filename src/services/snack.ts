@@ -12,7 +12,7 @@ export const snackSuccess = async ({ message = 'Success', icon = mdiCheckCircleO
 	snackbar_store.set_visible(true);
 };
 
-export const snackError = async ({ message = 'error', icon = mdiAlertCircle, timeout = 7500 }: Snack): Promise<void> =>{
+export const snackError = async ({ message = 'error', icon = mdiAlertCircle, timeout = 7500 }: Snack): Promise<void> => {
 	const snackbar_store = snackbarStore();
 	snackReset();
 	snackbar_store.set_icon(icon);

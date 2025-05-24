@@ -1,4 +1,4 @@
-/* eslint-disable @stylistic/ts/object-curly-newline */
+/* eslint-disable @stylistic/object-curly-newline */
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
 import { createApp } from 'vue';
 import { createHead } from '@vueuse/head';
@@ -27,9 +27,9 @@ pinia.use(({ store }) => {
 });
 pinia.router = (): Router => router;
 
-app
-	.use(head)
-	.use(router)
-	.use(pinia)
-	.use(vuetify)
-	.mount('#screen_control_app');
+app.
+	use(head).
+	use(router).
+	use(pinia).
+	use(vuetify).
+	mount('#screen_control_app');

@@ -9,7 +9,7 @@ export default createVuetify({
 		aliases,
 		sets: { mdi }
 	},
-	
+
 	theme: {
 		defaultTheme: 'dark',
 		themes: {

@@ -90,7 +90,7 @@ onMounted(() => {
 	init_status_interval();
 	loading.value = true;
 
-	/// Ten second timeout to get first message
+	// Ten second timeout to get first message
 	window.setTimeout(() => {
 		loading.value = false;
 	}, 10000);
@@ -110,18 +110,18 @@ const loading = computed({
 	}
 });
 
-/// Web socket methods
+// Web socket methods
 const screen_status = computed(() => statusStore.screen_status ?? 'unknown');
 
-/// Web socket methods
+// Web socket methods
 const init = computed(() => statusStore.init);
 
-/// Time methods
+// Time methods
 const time_interval = ref(0);
 
 const status_interval = ref(0);
 
-/// Update the current_time value every second
+// Update the current_time value every second
 const init_time_interval = (): void => {
 	clearInterval(time_interval.value);
 	time_interval.value = window.setInterval(() => {
@@ -136,10 +136,10 @@ const init_status_interval = (): void => {
 	}, 10_000);
 };
 
-/// Web socket methods
+// Web socket methods
 const ws_connected = computed(() => websocketStore.connected);
 
-/// Request the status of the server
+// Request the status of the server
 const send_status = (): void => {
 	websocketStore.send({ name: 'status' });
 };
@@ -195,7 +195,7 @@ const reload = (): void => {
 	router.go(0);
 };
 
-/// Text on the main button
+// Text on the main button
 const button_text = computed(() => {
 	if (have_screen_status.value) {
 		if (statusStore.screen_status === 'On') {
@@ -208,7 +208,7 @@ const button_text = computed(() => {
 	}
 });
 
-/// Screen status is known?
+// Screen status is known?
 const have_screen_status = computed(() => statusStore.have_screen_status);
 
 // Send a screen off command
@@ -221,7 +221,7 @@ const turn_screen_on = (): void => {
 	websocketStore.send({ name: 'screen_on' });
 };
 
-/// Toggle the screen depending on current screen state
+// Toggle the screen depending on current screen state
 const toggle_screen = async (): Promise<void> => {
 	if (statusStore.screen_status === 'On') {
 		turn_screen_off();

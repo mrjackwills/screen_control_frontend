@@ -63,7 +63,7 @@ onMounted(() => {
 	set_current_time();
 });
 
-/// Uptime is incrased every second in the HomeView.vue, by watching we can update the current_time on the same schedule
+// Uptime is incrased every second in the HomeView.vue, by watching we can update the current_time on the same schedule
 watch(uptime, () => {
 	set_current_time();
 });

@@ -54,10 +54,10 @@ class AxiosRequests {
 
 	@wrap()
 	async wsAuth_post (password: string): Promise<boolean> {
-			
+
 		const { data } = await this.#wsAuthAxios.post('', {
 			key: env.api_key,
-			password 
+			password
 		});
 		if (data.response) {
 			snackReset();
