@@ -86,7 +86,7 @@ const set_current_time = (): void => {
 	current_time.value = `${zeroPad(time.hours)}:${zeroPad(time.minutes)}:${zeroPad(time.seconds)}`;
 };
 
-const time_on = computed(() => `${statusStore.time_on[0]}:${statusStore.time_on[1]}`);
-const time_off = computed(() => `${statusStore.time_off[0]}:${statusStore.time_off[1]}`);
+const time_on = computed(() => `${zeroPad(statusStore.time_on[0])}:${zeroPad(statusStore.time_on[1])}`);
+const time_off = computed(() => `${zeroPad(statusStore.time_off[0])}:${zeroPad(statusStore.time_off[1])}`);
 
 </script>
