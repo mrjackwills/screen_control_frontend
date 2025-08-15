@@ -49,7 +49,7 @@ export default defineConfigWithVueTs(
 			'@stylistic/quotes': [
 				'error',
 				'single',
-				{ allowTemplateLiterals: true }
+				{ allowTemplateLiterals: 'always' }
 			],
 			'@typescript-eslint/array-type': [
 				'error',

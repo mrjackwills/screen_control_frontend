@@ -38,8 +38,8 @@ type OutgoingNameData<T extends OutgoingMessageName, U> = {
 type OutgoingMessageName = 'status' | 'screen_on' | 'screen_off';
 type IncomingMessageName = 'status' | 'error';
 
-export type Status = Record<'screen_status' | 'version' | 'ip_address' | 'timezone', string>
-  & Record<'uptime' | 'uptime_app' | 'uptime_ws', number> & Record<'time_on' | 'time_off', [number, number]>;
+export type Status = Record<'screen_status' | 'version' | 'ip_address' | 'timezone', string> &
+  Record<'uptime' | 'uptime_app' | 'uptime_ws', number> & Record<'time_on' | 'time_off', [number, number]>;
 
 export type ComputedCity = Record<'value' | 'title', string>;
 
