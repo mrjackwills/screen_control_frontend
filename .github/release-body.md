@@ -1,7 +1,9 @@
-### 2025-05-24
+### 2025-08-15
 
 ### Chores
-+ linting, [f7cce4ede2491939931b954cf666223de501bf3d]
-+ dependencies updated, [7e8981df2535ac1a27051827feda9d183e470252]
++ dependencies updated, [efb28620470063d8eca452fb60d4d1d4e5627f8d], [42c87a7062c888793ffc831e8b1cff23153179ea]
+
+### Fixes
++ zeropad timeon & timeoff, [5570a7e148eee797517dcfd09e272ee3906c3c30]
 
 see <a href='https://github.com/mrjackwills/screen_control_frontend/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details
