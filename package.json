@@ -1,6 +1,6 @@
 {
   "name": "screen_control_frontend",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scripts": {
     "serve": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -42,5 +42,5 @@
     "vite": "^7.1.7",
     "vue-tsc": "^3.0.8"
   },
-  "buildDate": "Fri 15 2025 August 15:35:02 BST"
+  "buildDate": "Wed 24 2025 September 21:47:15 BST"
 }
