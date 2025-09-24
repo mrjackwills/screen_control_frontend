@@ -1,9 +1,10 @@
-### 2025-08-15
+### 2025-09-24
 
 ### Chores
-+ dependencies updated, [efb28620470063d8eca452fb60d4d1d4e5627f8d], [42c87a7062c888793ffc831e8b1cff23153179ea]
++ GitHub workflow updated, [9077ab8e71c36dd8295ad9a03a0b4afa1e3da6b2], [df572ef0989c682bd6ead609d074aa386735d99c]
++ dependencies updated, [1b992e6aa8303dd7cf70a28ea69423496a828f9d], [cae32ba580424c155657479dfd6e144fc0aa8c9a]
 
-### Fixes
-+ zeropad timeon & timeoff, [5570a7e148eee797517dcfd09e272ee3906c3c30]
+### Refactors
++ params :x='x' to :x, [d8116fe56849de236ee3195f6304023f01098e66]
 
 see <a href='https://github.com/mrjackwills/screen_control_frontend/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details

@@ -2,7 +2,7 @@
 	<v-snackbar v-model='visible' timeout='-1' color='black'>
 		<v-row justify='center' align='center' no-gutters class='ma-0 pa-0 unselectable'>
 			<v-col v-if='icon && !loading' cols='auto' class=''>
-				<v-icon color='error' :icon='icon' />
+				<v-icon color='error' :icon />
 			</v-col>
 			<v-col v-if='loading' cols='auto' class=''>
 				<v-progress-circular indeterminate :size='18' :width='3' color='danger' />
