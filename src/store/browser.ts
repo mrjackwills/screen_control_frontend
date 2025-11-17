@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/const_module';
+import { defineStore } from 'pinia'
+import { ModuleName } from '@/types'
 
 export const browserModule = defineStore(ModuleName.BROWSER, {
 
@@ -8,28 +8,28 @@ export const browserModule = defineStore(ModuleName.BROWSER, {
 		description: '',
 		pwa: false,
 		redirect: '',
-		title: ''
+		title: '',
 	}),
 
 	actions: {
 		set_api_version (x: string): void {
-			this.api_version = x;
+			this.api_version = x
 		},
 
 		set_description (x: string): void {
-			this.description = x;
+			this.description = x
 		},
 
 		set_pwa (x: boolean): void {
-			this.pwa = x;
+			this.pwa = x
 		},
 
 		set_redirect (x: string): void {
-			this.redirect = x;
+			this.redirect = x
 		},
 
 		set_title (x: string): void {
-			this.title = x;
-		}
-	}
-});
+			this.title = x
+		},
+	},
+})

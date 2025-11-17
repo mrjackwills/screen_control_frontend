@@ -1,26 +1,39 @@
 <template>
 	<v-container class='fill-height ma-0 pa-0' fluid>
 
-		<v-row align='center' justify='center' no-gutters class='fill-height ma-0 pa-0'>
-			<v-col cols='12' class='ma-0 pa-0'>
+		<v-row align='center' class='fill-height ma-0 pa-0' justify='center' no-gutters>
+			<v-col class='ma-0 pa-0' cols='12'>
 
 				<v-row align='center' justify='center' no-gutters>
 					<v-col cols='9' md='5'>
-						<v-form v-on:submit.prevent autocomplete='off'>
+						<v-form autocomplete='off' @submit.prevent>
 							<v-row class='ma-0 pa-0' justify='center'>
-								<v-col cols='12' class='ma-0 pa-0'>
-									<v-text-field v-model='password' @click:prepend-inner='prependClick'
-										@keydown.enter='login' :error='passwordError'
+								<v-col class='ma-0 pa-0' cols='12'>
+									<v-text-field
+										v-model='password'
+										autocomplete='password'
+										bg-color='offwhite'
+										class='ma-0 pa-0'
+										clearable
+										:error='passwordError'
 										:error-messages='passwordError ? "incorrect password" : ""'
-										:prepend-inner-icon='eyeIcon' :type='inputType' bg-color='offwhite'
-										autocomplete='password' class='ma-0 pa-0' label='password required' clearable
-										persistent-hint />
+										label='password required'
+										persistent-hint
+										:prepend-inner-icon='eyeIcon'
+										:type='inputType'
+										@click:prepend-inner='prependClick'
+										@keydown.enter='login'
+									/>
 								</v-col>
-								<v-col cols='12' class='ma-0 pa-0'>
+								<v-col class='ma-0 pa-0' cols='12'>
 									<v-row class='ma-0 pa-0' justify='center'>
-										<v-col cols='auto' class='ma-0 pa-0'>
-											<v-btn @click='login' :disabled='buttonDisabled' color='primary'
-												rounded='lg'>
+										<v-col class='ma-0 pa-0' cols='auto'>
+											<v-btn
+												color='primary'
+												:disabled='buttonDisabled'
+												rounded='lg'
+												@click='login'
+											>
 												login
 											</v-btn>
 										</v-col>
@@ -38,65 +51,65 @@
 </template>
 
 <script setup lang="ts">
-import { axiosRequests } from '@/services/axios';
-import { FrontendRoutes } from '@/types/const_routes';
-import { mdiEye, mdiEyeOff } from '@mdi/js';
-import { snackReset } from '@/services/snack';
-import { useRouter } from 'vue-router';
-import type { VBtn } from 'vuetify/components/VBtn';
+import type { VBtn } from 'vuetify/components/VBtn'
+import { mdiEye, mdiEyeOff } from '@mdi/js'
+import { useRouter } from 'vue-router'
+import { axiosRequests } from '@/services/axios'
+import { snackReset } from '@/services/snack'
+import { FrontendRoutes } from '@/types'
 
-const router = useRouter();
-const loadingStore = loadingModule();
+const router = useRouter()
+const loadingStore = loadingModule()
 
-const pageTitle = 'login';
+const pageTitle = 'login'
 
 onMounted(() => {
-	browserModule().set_description(pageTitle);
-	browserModule().set_title(pageTitle);
-});
+	browserModule().set_description(pageTitle)
+	browserModule().set_title(pageTitle)
+})
 
-const buttonDisabled = computed(() => loading.value || password.value.length < 1 || passwordError.value);
+const buttonDisabled = computed(() => loading.value || password.value.length === 0 || passwordError.value)
 
 const loading = computed({
 	get (): boolean {
-		return loadingStore.loading;
+		return loadingStore.loading
 	},
 	set (b: boolean): void {
-		loadingStore.set_loading(b);
-	}
-});
+		loadingStore.set_loading(b)
+	},
+})
 
-const passwordVisible = ref(false);
-const password = ref('');
-const passwordError = ref(false);
+const passwordVisible = ref(false)
+const password = ref('')
+const passwordError = ref(false)
 
-const eyeIcon = computed(() => passwordVisible.value ? mdiEyeOff : mdiEye);
-const inputType = computed(() => passwordVisible.value ? 'text' : 'password');
-const prependClick = (): void => {
-	if (loading.value) return;
-	passwordVisible.value = !passwordVisible.value;
-};
+const eyeIcon = computed(() => passwordVisible.value ? mdiEyeOff : mdiEye)
+const inputType = computed(() => passwordVisible.value ? 'text' : 'password')
+function prependClick (): void {
+	if (loading.value) return
+	passwordVisible.value = !passwordVisible.value
+}
 
-watch(password, (_) => {
+watch(password, _ => {
 	if (passwordError.value) {
-		passwordError.value = false;
+		passwordError.value = false
 	}
-});
+})
 
-const login = async (): Promise<void> => {
-	if (!password.value) return;
-	passwordVisible.value = false;
-	loading.value = true;
-	const response = await axiosRequests.wsAuth_post(password.value);
-	loading.value = false;
+async function login (): Promise<void> {
+	if (!password.value) return
+	passwordVisible.value = false
+	loading.value = true
+	const response = await axiosRequests.wsAuth_post(password.value)
+	loading.value = false
 	if (response) {
-		password.value = '';
-		snackReset();
-		router.push(FrontendRoutes.BASE);
+		password.value = ''
+		snackReset()
+		router.push(FrontendRoutes.BASE)
 	} else {
-		passwordError.value = true;
+		passwordError.value = true
 	}
-};
+}
 
 </script>
 
