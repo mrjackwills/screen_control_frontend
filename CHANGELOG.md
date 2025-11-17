@@ -1,4 +1,7 @@
-# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.5'>v0.1.5</a>
+### Chores
++ improved linting, [a5970a7e883d64bb879745a2c6e26d6cae88192e]
+
+ # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.5'>v0.1.5</a>
 ### 2025-09-24
 
 ### Chores
