@@ -1,5 +1,8 @@
-/* eslint-disable @stylistic/multiline-comment-style */
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-pwa/client" />
 
-type ImportMeta = { readonly env: ImportMetaEnv };
+declare module '*.vue' {
+	import type { DefineComponent } from 'vue'
+	const component: DefineComponent<{}, {}, any>
+	export default component
+}
