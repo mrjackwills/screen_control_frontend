@@ -2,15 +2,69 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<link rel="icon" href="/favicon.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
 	<title>screen control</title>
+
+	<!-- Open Graph / Facebook -->
+	<meta property='og:description' content='screen control frontend'>
+	<meta property='og:image:height' content='630'>
+	<meta property='og:image:width' content='1200'>
+	<meta property='og:logo' content='https://screen.mrjackwills.com/img/icons/android-chrome-512x512.png'>
+	<meta property='og:title' content='screen control'>
+	<meta property='og:type' content='website'>
+	<meta property='og:url' content='https://screen.mrjackwills.com/'>
+	<meta property="og:image" content="https://screen.mrjackwills.com/img/icons/logo_og.png" />
+
+	<!-- Twitter -->
+	<meta property='twitter:card' content='summary_large_image'>
+	<meta property='twitter:description' content='screen control frontend'>
+	<meta property='twitter:image' content='https://screen.mrjackwills.com/img/icons/logo_og.png'>
+	<meta property='twitter:title' content='screen control'>
+	<meta property='twitter:url' content='https://screen.mrjackwills.com/'>
+
+	<meta name='robots' content='index, follow'>
+	<link rel='apple-touch-icon' sizes='180x180' href='/img/icons/apple-touch-icon.png'>
+	<link rel='icon' type='image/png' sizes='32x32' href='/img/icons/favicon-32x32.png'>
+	<link rel='icon' type='image/png' sizes='16x16' href='/img/icons/favicon-16x16.png'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
 	<div id="screen_control_app"></div>
 	<script type="module" src="/src/main.ts"></script>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Website",
+		"name": "Screen Control",
+		"description": "Frontend to a screen control software",
+		"url": "https://screen.mrjackwills.com",
+		"creator": {
+			"@type": "Person",
+			"name": "Jack Wills",
+			"url": "https://www.mrjackwills.com",
+			"image": "https://www.mrjackwills.com/img/icons/android-chrome-512x512.png",
+			"sameAs": [
+				"https://twitter.com/mrjackwills",
+				"https://github.com/mrjackwills",
+				"https://bsky.app/profile/mrjackwills.com"
+			]
+		},
+		"publisher": {
+		"@type": "Person",
+			"name": "Jack Wills",
+			"url": "https://www.mrjackwills.com",
+			"image": "https://www.mrjackwills.com/img/icons/android-chrome-512x512.png",
+			"sameAs": [
+				"https://twitter.com/mrjackwills",
+				"https://github.com/mrjackwills",
+				"https://bsky.app/profile/mrjackwills.com"
+			]
+		}
+	}
+	</script>
 </body>
 
 </html>
