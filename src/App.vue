@@ -31,14 +31,6 @@ const route = useRoute()
 const browserStore = browserModule()
 const { updateServiceWorker } = useRegisterSW()
 
-if ('serviceWorker' in navigator) {
-	registerSW({
-		onNeedRefresh () {
-			appUpdate()
-		},
-	})
-}
-
 const loading = computed(() => loadingModule().loading)
 const title = computed(() => browserStore.title)
 const description = computed(() => browserStore.description)
@@ -50,6 +42,23 @@ onMounted((): void => {
 	})
 })
 
+// check for updates every x minutes using an interval?
+function check_pwa (): void {
+	if ('serviceWorker' in navigator) {
+		registerSW({
+			onNeedRefresh () {
+				appUpdate()
+			},
+		})
+	}
+}
+
+onBeforeMount(async () => {
+	check_pwa()
+	service_interval.value = setInterval(check_pwa, 1000 * 60 * 20)
+})
+
+const service_interval = ref(0)
 const prefix = 'screen control'
 
 useHead({
@@ -79,7 +88,7 @@ function appUpdate (): void {
 		loading: true,
 		timeout: 4500,
 	})
-	window.setTimeout(() => updateServiceWorker(), 5000)
+	setTimeout(() => updateServiceWorker(), 5000)
 }
 
 </script>
