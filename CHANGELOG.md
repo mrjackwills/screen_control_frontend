@@ -8,7 +8,6 @@
 + pwa checker into, and into interval, [3f5c7098571f8e5b6969af43230a1bbb169b4382]
 + TS undefined errors, [d19d4d384bad0664de1849e6cfe2d5f88bfd86fe]
 
-
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.1.6'>v0.1.6</a>
 ### 2025-11-17
 
