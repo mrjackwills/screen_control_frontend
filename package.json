@@ -1,6 +1,6 @@
 {
   "name": "screen_control_frontend",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "dev": "vite",
     "serve": "vite",
@@ -45,5 +45,5 @@
     "vite-plugin-vuetify": "^2.1.2",
     "vue-tsc": "^3.2.2"
   },
-  "buildDate": "Fri 21 2025 November 20:19:21 GMT"
+  "buildDate": "Thu 08 2026 January 19:57:18 GMT"
 }
