@@ -1,8 +1,8 @@
 <template>
-	<v-row align='center' class='ma-0 pa-0' justify='center'>
-		<v-col class='text-caption ma-0 pa-0' cols='12'>
+	<v-row class='ma-0 pa-0 justify-center align-center'>
+		<v-col class='text-body-small ma-0 pa-0' cols='12'>
 
-			<v-row class='ma-0 pa-0' justify='space-between'>
+			<v-row class='ma-0 pa-0 justify-space-between'>
 
 				<v-col class='ma-0 pa-0 text-md-left text-left unselectable ' cols='6' md='4'>
 					<span>backend version: </span><span class='font-weight-bold'>{{ backend_version }}</span>

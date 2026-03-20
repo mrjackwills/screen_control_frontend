@@ -1,19 +1,19 @@
 <template>
-	<v-container class='fill-height ma-0 pa-0' fluid>
+	<v-container class='fill-height d-flex align-center flex-wrap ma-0 pa-0' fluid>
 
-		<v-row v-if='init' align='center' class='ma-0 pa-0 fill-height' justify='center'>
+		<v-row v-if='init' class='ma-0 pa-0 fill-height align-center justify-center'>
 			<v-col class='text-center ma-0 pa-0' cols='11'>
 
-				<v-row align='center' class='ma-0 pa-0' justify='center'>
+				<v-row class='ma-0 pa-0 justify-center align-center'>
 					<v-col class='text-center ma-0 pa-0' cols='12' md='6'>
 
 						<PiStatus />
 					</v-col>
 				</v-row>
 
-				<v-row align='center' class='ma-0 pa-0 mt-8' justify='center'>
+				<v-row class='ma-0 pa-0 mt-8 align-center justify-center'>
 					<v-col
-						class='text-center ma-0 pa-0 text-h1'
+						class='text-center ma-0 pa-0 text-5rem'
 						cols='12'
 					>
 						Screen is {{ screen_status }}
@@ -21,11 +21,11 @@
 
 				</v-row>
 
-				<v-row class='ma-0 pa-0 mt-8' justify='center'>
+				<v-row class='ma-0 pa-0 mt-8 justify-center'>
 
 					<template v-if='have_screen_status && init'>
 						<v-col class='ma-0 pa-0' cols='auto'>
-							<v-btn color='primary' rounded='lg' @click='toggle_screen'>
+							<v-btn class='text-uppercase' color='primary' rounded='lg' @click='toggle_screen'>
 								{{ button_text }}
 							</v-btn>
 						</v-col>
@@ -54,15 +54,15 @@
 			</v-col>
 		</v-row>
 
-		<v-row v-if='!init && !loading' align='center' class='ma-0 pa-0 fill-height' justify='center'>
+		<v-row v-if='!init && !loading' class='align-center ma-0 pa-0 fill-height justify-center'>
 			<v-col class='text-center ma-0 pa-0' cols='8' md='12'>
 
-				<v-row align='center' class='ma-0 pa-0' justify='center'>
-					<v-col class='text-center ma-0 pa-0 text-h2' cols='auto' md='12'>
+				<v-row class='ma-0 pa-0 justify-center align-center'>
+					<v-col class='text-center ma-0 pa-0 text-display-medium' cols='auto' md='12'>
 						Framebox appears offline
 					</v-col>
 				</v-row>
-				<v-row align='center' class='ma-0 pa-0 mt-3' justify='center'>
+				<v-row class='ma-0 pa-0 mt-6 justify-center align-center'>
 					<v-col v-if='!have_screen_status' class='ma-0 pa-0 ml-3' cols='auto'>
 						<v-btn color='primary' rounded='lg' @click='reload'>
 							reload
@@ -230,8 +230,9 @@ async function toggle_screen (): Promise<void> {
 
 </script>
 
-<style>
-.v-btn__content {
-	width: 100%
+<style scoped>
+
+.text-5rem {
+	font-size: 5rem;
 }
 </style>

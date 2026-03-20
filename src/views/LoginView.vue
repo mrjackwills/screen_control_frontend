@@ -1,13 +1,13 @@
 <template>
-	<v-container class='fill-height ma-0 pa-0' fluid>
+	<v-container class='ma-0 pa-0 fill-height d-flex align-center flex-wrap' fluid>
 
-		<v-row align='center' class='fill-height ma-0 pa-0' justify='center' no-gutters>
+		<v-row class='fill-height ma-0 pa-0 ustify-center align-center'>
 			<v-col class='ma-0 pa-0' cols='12'>
 
-				<v-row align='center' justify='center' no-gutters>
+				<v-row class='align-center justify-center' density='compact'>
 					<v-col cols='9' md='5'>
 						<v-form autocomplete='off' @submit.prevent>
-							<v-row class='ma-0 pa-0' justify='center'>
+							<v-row class='ma-0 pa-0 justify-center'>
 								<v-col class='ma-0 pa-0' cols='12'>
 									<v-text-field
 										v-model='password'
@@ -26,7 +26,7 @@
 									/>
 								</v-col>
 								<v-col class='ma-0 pa-0' cols='12'>
-									<v-row class='ma-0 pa-0' justify='center'>
+									<v-row class='ma-0 pa-0 justify-center'>
 										<v-col class='ma-0 pa-0' cols='auto'>
 											<v-btn
 												color='primary'

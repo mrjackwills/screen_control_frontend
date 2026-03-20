@@ -1,12 +1,13 @@
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
+import babel from '@rolldown/plugin-babel'
 // Plugins
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 // Utilities
 import { defineConfig } from 'vite'
-import viteCompression from 'vite-plugin-compression'
+import compression from 'vite-plugin-compression2'
 import { VitePWA } from 'vite-plugin-pwa'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
@@ -37,6 +38,20 @@ const pwaOptions: Partial<VitePWAOptions> = {
 	},
 }
 
+function decoratorPreset (options: Record<string, unknown>) {
+	return {
+		preset: () => ({
+			plugins: [['@babel/plugin-proposal-decorators', options]],
+		}),
+		rolldown: {
+			// Only run this transform if the file contains a decorator.
+			filter: {
+				code: '@',
+			},
+		},
+	}
+}
+
 export default defineConfig({
 	plugins: [
 		vue({ template: { transformAssetUrls } }),
@@ -60,8 +75,11 @@ export default defineConfig({
 			vueTemplate: false,
 		}),
 		VitePWA(pwaOptions),
-		viteCompression({ algorithm: 'brotliCompress' }),
-		viteCompression({ algorithm: 'gzip' }),
+		compression({
+			algorithms: ['brotliCompress', 'gzip'],
+			exclude: [/\.(br)$/, /\.(gz)$/],
+		}),
+		babel({ presets: [decoratorPreset({ version: '2023-11' })] }),
 	],
 	define: {
 		'process.env': {},

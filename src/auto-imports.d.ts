@@ -7,6 +7,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue').EffectScope
+  const actions: typeof import('./store/websocket').actions
   const browserModule: typeof import('./store/browser').browserModule
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
