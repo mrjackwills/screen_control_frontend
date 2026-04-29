@@ -4,9 +4,11 @@
 			<v-col v-if='icon && !loading' class='' cols='auto'>
 				<v-icon color='error' :icon />
 			</v-col>
+
 			<v-col v-if='loading' class='' cols='auto'>
 				<v-progress-circular color='danger' indeterminate :size='18' :width='3' />
 			</v-col>
+
 			<v-col class='mx-3 ma-0 pa-0 danger--text' cols='auto'>
 				{{ message }}
 			</v-col>

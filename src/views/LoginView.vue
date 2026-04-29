@@ -25,6 +25,7 @@
 										@keydown.enter='login'
 									/>
 								</v-col>
+
 								<v-col class='ma-0 pa-0' cols='12'>
 									<v-row class='ma-0 pa-0 justify-center'>
 										<v-col class='ma-0 pa-0' cols='auto'>
@@ -54,7 +55,7 @@
 import type { VBtn } from 'vuetify/components/VBtn'
 import { mdiEye, mdiEyeOff } from '@mdi/js'
 import { useRouter } from 'vue-router'
-import { axiosRequests } from '@/services/axios'
+import { fetchRequests } from '@/services/fetch'
 import { snackReset } from '@/services/snack'
 import { FrontendRoutes } from '@/types'
 
@@ -100,7 +101,7 @@ async function login (): Promise<void> {
 	if (!password.value) return
 	passwordVisible.value = false
 	loading.value = true
-	const response = await axiosRequests.wsAuth_post(password.value)
+	const response = await fetchRequests.wsAuth_post(password.value)
 	loading.value = false
 	if (response) {
 		password.value = ''

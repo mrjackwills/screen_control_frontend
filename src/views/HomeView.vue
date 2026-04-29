@@ -31,6 +31,7 @@
 						</v-col>
 
 					</template>
+
 					<template v-if='!have_screen_status && init'>
 
 						<v-col class='ma-0 pa-0 mr-3' cols='auto'>
@@ -62,6 +63,7 @@
 						Framebox appears offline
 					</v-col>
 				</v-row>
+
 				<v-row class='ma-0 pa-0 mt-6 justify-center align-center'>
 					<v-col v-if='!have_screen_status' class='ma-0 pa-0 ml-3' cols='auto'>
 						<v-btn color='primary' rounded='lg' @click='reload'>
