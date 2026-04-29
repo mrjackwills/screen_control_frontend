@@ -27,6 +27,7 @@
 						<a :href rel='noopener noreferrer' target='_blank'>
 							<v-icon class='' color='black' href='' :icon='mdiGithub' />
 						</a>
+
 						<span @click='buildInfo'>
 							mrjackwills 2024-
 						</span>

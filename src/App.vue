@@ -12,6 +12,7 @@
 				:indeterminate='loading'
 				top
 			/>
+
 			<RouterView />
 			<AppFooter />
 			<SnackBar />
