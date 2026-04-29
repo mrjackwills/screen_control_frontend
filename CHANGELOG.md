@@ -1,9 +1,12 @@
+# <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.2.3'>v0.2.3</a>
+### 2026-04-29
+
 ### Chores
-+ linting, [5cd8dcf564322b64ca27523e0e423c15e0df643e]
-+ dependencies updated, [7594e154288a7646968e80dfe017f214c4a662c5]
++ linting, [5cd8dcf5](https://github.com/mrjackwills/screen_control_frontend/commit/5cd8dcf564322b64ca27523e0e423c15e0df643e)
++ dependencies updated, [7594e154](https://github.com/mrjackwills/screen_control_frontend/commit/7594e154288a7646968e80dfe017f214c4a662c5)
 
 ### Features
-+ axios replaced by native fetch, [47e018e160d3ed25a85b1a61d52570e49a78af57]
++ axios replaced by native fetch, [47e018e1](https://github.com/mrjackwills/screen_control_frontend/commit/47e018e160d3ed25a85b1a61d52570e49a78af57)
 
 # <a href='https://github.com/mrjackwills/screen_control_frontend/releases/tag/v0.2.2'>v0.2.2</a>
 ### 2026-03-20
