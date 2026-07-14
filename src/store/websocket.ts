@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/no-this-outside-of-class */
+
 import type { wsOutGoing } from '@/types'
 import { defineStore } from 'pinia'
 import { ws } from '@/services/WS'
