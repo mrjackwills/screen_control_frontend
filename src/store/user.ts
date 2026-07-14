@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/no-this-outside-of-class */
 import { defineStore, getActivePinia } from 'pinia'
 import { snackError } from '@/services/snack'
 import { loadingModule } from '@/store/loading'
